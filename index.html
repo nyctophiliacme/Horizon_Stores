@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+
+    <script type="text/javascript">
+
+    	$(document).ready(function(){
+    		
+    		// $('#image1').on('mouseover', function() {
+    		// 	alert("fmouseover");
+    		// });
+
+    		// $('#image1').on('mouseout', function() {
+    		// 	alert("mouseout");
+    		// });
+    		// alert("sdfaf");
+    		$("#image1").hover(function()
+    		{
+    			// alert("vflvnlfknvlkfv");
+
+    			$("#image1").css("animation","none");
+    			$("#image2").css("animation","none");
+    			$("#image3").css("animation","none");
+
+    			// $("#image1").stop().animate({left: '0'});
+    			// $("#image2").stop().animate({left: '100%'});
+    			// $("#image3").stop().animate({left: '-100%'});
+    			
+
+    			// $("#image1").css("opacity","1");
+    			// $("#image2").css("opacity","0");
+    			// $("#image3").css("opacity","0");
+
+
+    			$("#image1").css({left:'0'});
+    			$("#image2").css({left:'100%'});
+    			$("#image3").css({left:'-100%'});
+
+    			// $("#image1").css("left","0");
+    			// $("#image2").css("left","100%");
+    			// $("#image3").css("left","-100%");
+    			
+    		});
+
+    		$("#image2").mouseover(function()
+    		{
+    		    
+    		    $("#image1").css("animation","none");
+    			$("#image2").css("animation","none");
+    			$("#image3").css("animation","none");
+
+    			// $("#image1").stop().animate({left: '-100%'});
+    			// $("#image2").stop().animate({left: '0'});
+    			// $("#image3").stop().animate({left: '100%'});
+    			
+
+    			// $("#image1").css("opacity","0");
+    			// $("#image2").css("opacity","1");
+    			// $("#image3").css("opacity","0");
+
+
+    			$("#image1").css({left:'-100%'});
+    			$("#image2").css({left:'0'});
+    			$("#image3").css({left:'100%'});
+    		});
+
+    		$("#image3").hover(function()
+    		{
+    			
+
+    			$("#image1").css("animation","none");
+    			$("#image2").css("animation","none");
+    			$("#image3").css("animation","none");
+
+    			// $("#image1").stop().animate({left: '100%'});
+    			// $("#image2").stop().animate({left: '-100%'});
+    			// $("#image3").stop().animate({left: '0'});
+    			
+
+    			// $("#image1").css("opacity","0");
+    			// $("#image2").css("opacity","0");
+    			// $("#image3").css("opacity","1");
+
+    			
+    			$("#image1").css({left:'100%'});
+    			$("#image2").css({left:'-100%'});
+    			$("#image3").css({left:'0'});    			
+    		});
+
+
+
+
+    		$("#image1").on('mouseout', function()
+    		{
+    			// alert("vflvnlfknvlkfv");
+    			$("#image1").css("animation","animateImage1 6s infinite");
+    			$("#image2").css("animation","animateImage2 6s infinite");
+    			$("#image3").css("animation","animateImage3 6s infinite");
+    		});
+    		$("#image2").on('mouseout', function()
+    		{
+    			// alert("vflvnlfknvlkfv");
+    			$("#image1").css("animation","animateImage1 6s infinite");
+    			$("#image2").css("animation","animateImage2 6s infinite");
+    			$("#image3").css("animation","animateImage3 6s infinite");
+    		});
+    		$("#image3").on('mouseout', function()
+    		{
+    			// alert("vflvnlfknvlkfv");
+    			$("#image1").css("animation","animateImage1 6s infinite");
+    			$("#image2").css("animation","animateImage2 6s infinite");
+    			$("#image3").css("animation","animateImage3 6s infinite");
+    		});
+    		
+
+    	});
+    </script>	
+</head>
+<body>
+
+	<div id="icon-header">
+	ICON Comes here
+	</div>
+
+	<div id="category-header">
+	<ul>
+	   <li>Shoes</li>
+	   <li>Clothes</li>
+	</ul>
+	</div>
+
+    <div id="image-container">
+	<div class="images" id="image1"><img src="imgs/img1.jpg"></div>
+	<div class="images" id="image2"><img src="imgs/img2.jpg"></div>
+	<div class="images" id="image3"><img src="imgs/img3.jpg"></div>
+	</div>
+
+</body>

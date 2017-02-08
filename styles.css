@@ -1,0 +1,183 @@
+head,body
+{
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+}
+#icon-header
+{
+	width : 100%;
+	background-color : #34495e;
+	color : #ecf0f1;
+	padding-top : 10px;
+	padding-bottom: 10px;  
+	font-family: sans-serif;
+	/*padding-left: 10px;*/
+
+	/*position: absolute;*/
+	top:0;
+}
+#category-header
+{
+	background-color: #95a5a6;
+	font-family: sans-serif;
+	/*position: relative;*/
+}
+#category-header ul
+{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+#category-header ul li
+{
+	padding: 10px 50px;
+	display: inline-block;
+	padding-top : 10px;  
+}
+#category-header ul li:hover
+{
+	background-color: #34495e;
+}
+.images
+{
+	width: 100%;
+	height: 600px;
+	/*display: inline;*/
+	/*float: left;*/
+	margin: 0;
+	padding: 0;
+	position: absolute;
+}
+
+
+#image1
+{
+	left: -100%;
+	visibility: hidden;
+	animation: animateImage1 6s infinite; 
+}
+#image2
+{
+	left: 0;
+    visibility: visible;
+	animation: animateImage2 6s infinite;
+}
+#image3
+{
+	left: 100%;
+	visibility: hidden;
+	/*overflow-x: hidden;*/
+	/*display: none;*/
+	animation: animateImage3 6s infinite;
+}
+
+/*#image-container
+{
+	display: inline;
+	position: absolute;
+	overflow-x: scroll;
+}*/
+.images img
+{
+	width:100%;
+	height:100%;
+}
+
+/*#image1-wrapper:hover #image1 
+{
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    animation-play-state: paused;
+}
+*/
+/*#image1:hover
+{
+	animation: none;
+}
+#image2:hover
+{
+	animation: none;
+}
+#image3:hover
+{
+	animation: none;
+}
+*/
+
+@keyframes animateImage1
+{
+	0%
+	{
+		left: -100%;
+		visibility: hidden;
+		/*opacity:0;*/
+		/*z-index: 0;*/
+	}
+	33.33%
+	{
+		left: 0;
+		visibility: visible;
+		/*opacity:1;*/
+		/*z-index: 99;*/
+	}
+	66.67%
+	{
+		left: 100%;
+		visibility: hidden;
+		/*opacity:0;*/
+		/*z-index: 0;*/
+	}
+}
+
+@keyframes animateImage2
+{
+	0%
+	{
+		left: 0;
+		visibility: visible;
+		/*opacity:1;*/
+		/*z-index: 99;*/
+	}
+	33.33%
+	{
+		left: 100%;
+		visibility: hidden;
+		/*opacity:0;*/
+		/*z-index: 0;*/
+	}
+	66.67%
+	{
+		left: -100%;
+		visibility: hidden;
+		/*opacity:0;*/
+		/*z-index: 0;*/
+	}
+}
+
+
+@keyframes animateImage3
+{
+	0%
+	{
+		left: 100%;
+		visibility: hidden;
+		/*opacity:0;*/
+		/*z-index: 0;*/
+	}
+	33.33%
+	{
+		left: -100%;
+		visibility: hidden;
+		/*opacity:0;*/
+		/*z-index: 0;*/
+	}
+	66.67%
+	{
+		left: 0;
+		visibility: visible;
+		/*opacity:1;*/
+		/*z-index: 99;*/
+	}
+}

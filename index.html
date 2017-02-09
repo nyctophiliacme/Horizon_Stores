@@ -1,140 +1,118 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-    <script type="text/javascript" src="js/jquery.js"></script>
+      <script type="text/javascript" src="js/jquery.js"></script>
+      <link rel="stylesheet" type="text/css" href="newstyles.css" /> 
+      <script type="text/javascript">
+      
+        var newIndex = 0,curIndex = 0,temp = 0;
+         // autoSlider();
+        // hoverHandler();
 
-    <script type="text/javascript">
-
-    	$(document).ready(function(){
-    		
-    		// $('#image1').on('mouseover', function() {
-    		// 	alert("fmouseover");
-    		// });
-
-    		// $('#image1').on('mouseout', function() {
-    		// 	alert("mouseout");
-    		// });
-    		// alert("sdfaf");
-    		$("#image1").hover(function()
-    		{
-    			// alert("vflvnlfknvlkfv");
-
-    			$("#image1").css("animation","none");
-    			$("#image2").css("animation","none");
-    			$("#image3").css("animation","none");
-
-    			// $("#image1").stop().animate({left: '0'});
-    			// $("#image2").stop().animate({left: '100%'});
-    			// $("#image3").stop().animate({left: '-100%'});
-    			
-
-    			// $("#image1").css("opacity","1");
-    			// $("#image2").css("opacity","0");
-    			// $("#image3").css("opacity","0");
+      
+        var autoHelper = function()
+        {
+            changeImage(1);
+        }
 
 
-    			$("#image1").css({left:'0'});
-    			$("#image2").css({left:'100%'});
-    			$("#image3").css({left:'-100%'});
+        function changeImage(n)
+        {
+            if(n>0)
+                rightImage(newIndex += n);
+            else
+                leftImage(newIndex += n);
+        }
 
-    			// $("#image1").css("left","0");
-    			// $("#image2").css("left","100%");
-    			// $("#image3").css("left","-100%");
-    			
-    		});
+        function rightImage(n)
+        {
+            // alert("afasdf");
+            console.log("called");
+        
+            var x = $(".images");
+            // console.log(x);
+            if( n >= x.length)
+            {
+                newIndex = 0;
+            }
+            curIndex = newIndex - 1;
+            if(curIndex < 0)
+            {
+                curIndex = x.length-1;
+            }
+            // console.log(slideIndex+"  "+prevIndex);              
 
-    		$("#image2").mouseover(function()
-    		{
-    		    
-    		    $("#image1").css("animation","none");
-    			$("#image2").css("animation","none");
-    			$("#image3").css("animation","none");
+            x.eq(curIndex).css({left: 0});
+            x.eq(newIndex).css({left: "100%"});
 
-    			// $("#image1").stop().animate({left: '-100%'});
-    			// $("#image2").stop().animate({left: '0'});
-    			// $("#image3").stop().animate({left: '100%'});
-    			
+            x.eq(curIndex).animate({left: "-100%"},1000);
+            x.eq(newIndex).animate({left: 0},1000);
 
-    			// $("#image1").css("opacity","0");
-    			// $("#image2").css("opacity","1");
-    			// $("#image3").css("opacity","0");
+        }
+        var interval = setInterval(autoHelper,3000);
+        
 
+        function leftImage(n)
+        {
+            // alert("afasdf");
+        
+            var x = $(".images");
+            // console.log(x);
+            if(n < 0)
+            {
+                newIndex = x.length - 1;
+            }
+            curIndex = newIndex + 1;
+            if(curIndex >= x.length)
+            {
+                curIndex = 0;
+            }
+            // console.log(slideIndex+"  "+prevIndex);              
 
-    			$("#image1").css({left:'-100%'});
-    			$("#image2").css({left:'0'});
-    			$("#image3").css({left:'100%'});
-    		});
+            x.eq(curIndex).css({left:0});
+            x.eq(newIndex).css({left:"-100%"});
 
-    		$("#image3").hover(function()
-    		{
-    			
-
-    			$("#image1").css("animation","none");
-    			$("#image2").css("animation","none");
-    			$("#image3").css("animation","none");
-
-    			// $("#image1").stop().animate({left: '100%'});
-    			// $("#image2").stop().animate({left: '-100%'});
-    			// $("#image3").stop().animate({left: '0'});
-    			
-
-    			// $("#image1").css("opacity","0");
-    			// $("#image2").css("opacity","0");
-    			// $("#image3").css("opacity","1");
-
-    			
-    			$("#image1").css({left:'100%'});
-    			$("#image2").css({left:'-100%'});
-    			$("#image3").css({left:'0'});    			
-    		});
-
-
-
-
-    		$("#image1").on('mouseout', function()
-    		{
-    			// alert("vflvnlfknvlkfv");
-    			$("#image1").css("animation","animateImage1 6s infinite");
-    			$("#image2").css("animation","animateImage2 6s infinite");
-    			$("#image3").css("animation","animateImage3 6s infinite");
-    		});
-    		$("#image2").on('mouseout', function()
-    		{
-    			// alert("vflvnlfknvlkfv");
-    			$("#image1").css("animation","animateImage1 6s infinite");
-    			$("#image2").css("animation","animateImage2 6s infinite");
-    			$("#image3").css("animation","animateImage3 6s infinite");
-    		});
-    		$("#image3").on('mouseout', function()
-    		{
-    			// alert("vflvnlfknvlkfv");
-    			$("#image1").css("animation","animateImage1 6s infinite");
-    			$("#image2").css("animation","animateImage2 6s infinite");
-    			$("#image3").css("animation","animateImage3 6s infinite");
-    		});
-    		
-
-    	});
-    </script>	
+            x.eq(curIndex).animate({left: "100%"},1000);
+            x.eq(newIndex).animate({left: 0},1000);
+        }
+        $(document).ready(function() {
+                $('.images').hover(function()
+                {
+                    clearInterval(interval);
+                    // console.log("hover");
+                },function(){
+                    interval = setInterval(autoHelper,3000);
+                });
+                $(".images").click(function(){
+                    // console.log("clicked");
+                });
+        });
+                
+      </script>
 </head>
 <body>
 
-	<div id="icon-header">
-	ICON Comes here
-	</div>
+    <div id="icon-header">
+        <div id="icon">
+            ICON Comes here
+        </div>
+        <div id="logos">
+            Images come here
+        </div>
+    </div>
 
-	<div id="category-header">
-	<ul>
-	   <li>Shoes</li>
-	   <li>Clothes</li>
-	</ul>
-	</div>
-
-    <div id="image-container">
-	<div class="images" id="image1"><img src="imgs/img1.jpg"></div>
-	<div class="images" id="image2"><img src="imgs/img2.jpg"></div>
-	<div class="images" id="image3"><img src="imgs/img3.jpg"></div>
-	</div>
-
+    <div id="category-header">
+    <ul>
+       <li>Shoes</li>
+       <li>Clothes</li>
+    </ul>
+    </div>
+    <div class = "image-container">
+         <img src="imgs/img1.jpg" class="images" id="image1">
+         <img src="imgs/img2.jpg" class="images" id="image2">
+         <img src="imgs/img3.jpg" class="images" id="image3">
+    </div>
+    <div class="left-right-buttons" onclick="changeImage(-1)" id="left-button">&#10094;</div>
+    <div class="left-right-buttons" onclick="changeImage(1)" id="right-button">&#10095;</div>
 </body>
+</html>

@@ -15,6 +15,9 @@ body,head
 	/*padding-left: 10px;*/
 	/*position: absolute;*/
 	top:0;
+	left: 0;
+	position: fixed;
+	z-index: 1;
 }
 
 #category-header
@@ -22,6 +25,10 @@ body,head
 	background-color: #95a5a6;
 	font-family: sans-serif;
 	/*position: relative;*/
+	position: fixed;
+	width: 100%;
+	top:38px;
+	z-index: 1;
 }
 #category-header ul
 {
@@ -51,13 +58,13 @@ body,head
 #category-header ul li ul
 {
 	/*left: 0;*/
-	top: 76px;
+	position: absolute;
+	top: 38px;
 	width: 15%;
 	background-color: #95a5a6;
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
-	position: absolute;
 	z-index: 50;
 	display: none;
 }
@@ -106,6 +113,7 @@ body,head
 
 .images
 {
+	top: 76px;
 	width: 100%;
 	height: 600px;
 	/*display: inline;*/
@@ -130,6 +138,16 @@ body,head
 {
 	cursor: pointer;
 	opacity: 0.60;
+}
+#left-button div
+{
+	left: 150%;
+	position: relative;
+}
+#right-button div
+{
+	right: 150%;
+	position: relative;
 }
 #left-button
 {

@@ -2,19 +2,17 @@
 <html>
 <head>
       <script type="text/javascript" src="js/jquery.js"></script>
-      <link rel="stylesheet" type="text/css" href="newstyles.css" /> 
+      <link rel="stylesheet" type="text/css" href="styles.css" /> 
       <script type="text/javascript">
       
         var newIndex = 0,curIndex = 0,temp = 0;
          // autoSlider();
         // hoverHandler();
-
       
         var autoHelper = function()
         {
             changeImage(1);
         }
-
 
         function changeImage(n)
         {
@@ -49,7 +47,7 @@
             x.eq(newIndex).animate({left: 0},1000);
 
         }
-        var interval = setInterval(autoHelper,3000);
+        var interval = setInterval(autoHelper,4000);
         
 
         function leftImage(n)
@@ -83,8 +81,12 @@
                 },function(){
                     interval = setInterval(autoHelper,3000);
                 });
-                $(".images").click(function(){
-                    // console.log("clicked");
+                $('.left-right-buttons').hover(function()
+                {
+                    clearInterval(interval);
+                },function()
+                {
+                    interval = setInterval(autoHelper,3000);
                 });
         });
                 
@@ -103,8 +105,37 @@
 
     <div id="category-header">
     <ul>
-       <li>Shoes</li>
-       <li>Clothes</li>
+       <li>Shoes
+           <ul>
+               <li>Sandals</li><!--
+               --><li>Ethnic Wear</li><!--
+               --><li>Sports Shoes</li><!--
+               --><li>Casual Shoes</li><!--
+               --><li>Others</li>
+           </ul>
+       </li><!--
+       --><li>Clothes
+            <ul>
+               <li>Bas</li><!--
+               --><li>Beta</li>
+           </ul>
+       </li><!--
+       --><li>Hand Bags
+            <ul>
+               <li>Ka</li>
+           </ul>
+       </li><!--
+       --><li>Watches
+            <ul>
+               <li>Baap</li>
+           </ul>
+       </li><!--
+       --><li>Jwellery
+            <ul>
+               <li>Murmu</li>
+               
+           </ul>
+       </li>       
     </ul>
     </div>
     <div class = "image-container">

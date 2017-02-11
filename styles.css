@@ -4,6 +4,87 @@ body,head
 	margin: 0;
 	padding: 0;
 }
+#icon-header
+{
+	width : 100%;
+	background-color : #34495e;
+	color : #ecf0f1;
+	padding-top : 10px;
+	padding-bottom: 10px;  
+	font-family: sans-serif;
+	/*padding-left: 10px;*/
+	/*position: absolute;*/
+	top:0;
+}
+
+#category-header
+{
+	background-color: #95a5a6;
+	font-family: sans-serif;
+	/*position: relative;*/
+}
+#category-header ul
+{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+#category-header ul li
+{
+	padding: 10px 0px;
+	width: 15%;
+	text-align: center;
+	display: inline-block;
+	margin: 0px;
+}
+#category-header ul li:hover
+{
+	background-color: #34495e;
+}
+#category-header ul li:hover ul
+{
+	/*background-color: #34495e;*/
+	display: block;
+}
+
+
+#category-header ul li ul
+{
+	/*left: 0;*/
+	top: 76px;
+	width: 15%;
+	background-color: #95a5a6;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	z-index: 50;
+	display: none;
+}
+#category-header ul li ul li
+{
+	padding: 10px 0px;
+	width: 100%;
+	text-align: center;
+	/*display: block;*/
+	margin: 0;
+	cursor: pointer;
+}
+#category-header ul li ul li:hover
+{
+	background-color: #34495e
+}
+#icon
+{
+	margin-left: 10px; 
+	display: inline-block;
+}
+#logos
+{
+	float: right;
+	margin-right: 10px;
+	display: inline-block;
+}
 #image1
 {
 	/*position: absolute;*/
@@ -38,66 +119,28 @@ body,head
 {
 	position: absolute;
 	z-index: 50;
-	/*background-color: red;		*/
-	padding: 50px;
-	top: 150px;
+	background-color: #95a5a6;		
+	padding: 50px 50px;
+	/*width: 50px 50px;*/
+	border-radius: 100% ;
+	top: 280px;
+	opacity: 0.20;
 }
 .left-right-buttons:hover
 {
 	cursor: pointer;
+	opacity: 0.60;
 }
 #left-button
 {
-	left : 0;
+	left : -50px;
+	/*left: 0;*/
+	text-align: right;
 }
 #right-button
 {
-	right: 0;
+	right: -50px;
+	/*right: 0;*/
+	text-align: left;
 }
 
-#icon-header
-{
-	width : 100%;
-	background-color : #34495e;
-	color : #ecf0f1;
-	padding-top : 10px;
-	padding-bottom: 10px;  
-	font-family: sans-serif;
-	/*padding-left: 10px;*/
-
-	/*position: absolute;*/
-	top:0;
-}
-
-#category-header
-{
-	background-color: #95a5a6;
-	font-family: sans-serif;
-	/*position: relative;*/
-}
-#category-header ul
-{
-	list-style-type: none;
-	padding: 0;
-	margin: 0;
-}
-#category-header ul li
-{
-	padding: 10px 50px;
-	display: inline-block;
-}
-#category-header ul li:hover
-{
-	background-color: #34495e;
-}
-#icon
-{
-	margin-left: 10px; 
-	display: inline-block;
-}
-#logos
-{
-	float: right;
-	margin-right: 10px;
-	display: inline-block;
-}

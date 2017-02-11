@@ -17,9 +17,15 @@
         function changeImage(n)
         {
             if(n>0)
-                rightImage(newIndex += n);
+                {
+                    $('#right-button').css("pointer-events","none");
+                    rightImage(newIndex += n);
+                }
             else
-                leftImage(newIndex += n);
+                {
+                    $('#left-button').css("pointer-events","none");
+                    leftImage(newIndex += n);
+                }
         }
 
         function rightImage(n)
@@ -45,6 +51,11 @@
 
             x.eq(curIndex).animate({left: "-100%"},1000);
             x.eq(newIndex).animate({left: 0},1000);
+
+            setTimeout(function()
+                {
+                    $('#right-button').css("pointer-events","auto");
+                },1000);
 
         }
         var interval = setInterval(autoHelper,4000);
@@ -72,6 +83,10 @@
 
             x.eq(curIndex).animate({left: "100%"},1000);
             x.eq(newIndex).animate({left: 0},1000);
+            setTimeout(function()
+                {
+                    $('#left-button').css("pointer-events","auto");
+                },1000);
         }
         $(document).ready(function() {
                 $('.images').hover(function()
@@ -79,14 +94,14 @@
                     clearInterval(interval);
                     // console.log("hover");
                 },function(){
-                    interval = setInterval(autoHelper,3000);
+                    interval = setInterval(autoHelper,4000);
                 });
                 $('.left-right-buttons').hover(function()
                 {
                     clearInterval(interval);
                 },function()
                 {
-                    interval = setInterval(autoHelper,3000);
+                    interval = setInterval(autoHelper,4000);
                 });
         });
                 

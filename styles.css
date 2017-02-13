@@ -92,6 +92,13 @@ body,head
 	margin-right: 10px;
 	display: inline-block;
 }
+#login-icon
+{
+	float: right;
+	margin-right: 10px;
+	display: inline-block;
+	cursor: pointer;
+}
 #image1
 {
 	/*position: absolute;*/
@@ -161,4 +168,38 @@ body,head
 	/*right: 0;*/
 	text-align: left;
 }
-
+#coverup
+{
+	height: 200%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	/*display: block;*/
+	display: none;
+	position: absolute;
+	z-index: 2;
+	opacity: 0.8;
+	background-color: #95a5a6;
+}
+.login-signup
+{
+	font-family: sans-serif;
+	margin: auto;
+	font-size: 0.8em;
+	position: fixed;
+	top: 35%;
+	left: 40%;
+	/*display: block;*/
+	display: none;
+	z-index: 4;
+	background-color: white;
+	border-radius: 10px;
+	padding:20px 20px;
+	border:5px solid #34495e;
+}
+.login-signup h4
+{
+	font-size: 1.4em;
+	margin: 0;
+	padding:0 0 10px 0;
+}

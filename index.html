@@ -103,6 +103,17 @@
                 {
                     interval = setInterval(autoHelper,4000);
                 });
+
+                $('#login-icon').click(function()
+                {
+                     $('#login').css("display","block");
+                     $('#coverup').css("display","block");
+                });
+                $('#coverup').click(function()
+                {
+                     $('#login').css("display","none");
+                     $('#coverup').css("display","none");
+                });
         });
                 
       </script>
@@ -115,6 +126,9 @@
         </div>
         <div id="logos">
             Images come here
+        </div>
+        <div id="login-icon">
+          Login
         </div>
     </div>
 
@@ -168,5 +182,21 @@
             &#10095;
         </div>
     </div>
+    <div id="login" class="login-signup">
+        <h4 style="text-align: center;">Login</h4>
+          <form>
+              <table>
+                  <tr>
+                    <td>Username</td>
+                    <td><input type="text" name="username"></td>
+                  </tr>
+                  <tr>
+                    <td>Password</td>
+                    <td><input type="password" name="password"></td>
+                  </tr>
+              </table>
+          </form>
+    </div>
+    <div id="coverup"></div>
 </body>
 </html>

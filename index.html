@@ -2,26 +2,30 @@
 <html>
 <head>
       <script type="text/javascript" src="js/jquery.js"></script>
-      <link rel="stylesheet" type="text/css" href="newstyles.css" /> 
+      <link rel="stylesheet" type="text/css" href="styles.css" /> 
       <script type="text/javascript">
       
         var newIndex = 0,curIndex = 0,temp = 0;
          // autoSlider();
         // hoverHandler();
-
       
         var autoHelper = function()
         {
             changeImage(1);
         }
 
-
         function changeImage(n)
         {
             if(n>0)
-                rightImage(newIndex += n);
+                {
+                    $('#right-button').css("pointer-events","none");
+                    rightImage(newIndex += n);
+                }
             else
-                leftImage(newIndex += n);
+                {
+                    $('#left-button').css("pointer-events","none");
+                    leftImage(newIndex += n);
+                }
         }
 
         function rightImage(n)
@@ -48,8 +52,13 @@
             x.eq(curIndex).animate({left: "-100%"},1000);
             x.eq(newIndex).animate({left: 0},1000);
 
+            setTimeout(function()
+                {
+                    $('#right-button').css("pointer-events","auto");
+                },1000);
+
         }
-        var interval = setInterval(autoHelper,3000);
+        var interval = setInterval(autoHelper,4000);
         
 
         function leftImage(n)
@@ -74,6 +83,10 @@
 
             x.eq(curIndex).animate({left: "100%"},1000);
             x.eq(newIndex).animate({left: 0},1000);
+            setTimeout(function()
+                {
+                    $('#left-button').css("pointer-events","auto");
+                },1000);
         }
         $(document).ready(function() {
                 $('.images').hover(function()
@@ -81,10 +94,25 @@
                     clearInterval(interval);
                     // console.log("hover");
                 },function(){
-                    interval = setInterval(autoHelper,3000);
+                    interval = setInterval(autoHelper,4000);
                 });
-                $(".images").click(function(){
-                    // console.log("clicked");
+                $('.left-right-buttons').hover(function()
+                {
+                    clearInterval(interval);
+                },function()
+                {
+                    interval = setInterval(autoHelper,4000);
+                });
+
+                $('#login-icon').click(function()
+                {
+                     $('#login').css("display","block");
+                     $('#coverup').css("display","block");
+                });
+                $('#coverup').click(function()
+                {
+                     $('#login').css("display","none");
+                     $('#coverup').css("display","none");
                 });
         });
                 
@@ -99,12 +127,44 @@
         <div id="logos">
             Images come here
         </div>
+        <div id="login-icon">
+          Login
+        </div>
     </div>
 
     <div id="category-header">
     <ul>
-       <li>Shoes</li>
-       <li>Clothes</li>
+       <li>Shoes
+           <ul>
+               <li>Sandals</li><!--
+               --><li>Ethnic Wear</li><!--
+               --><li>Sports Shoes</li><!--
+               --><li>Casual Shoes</li><!--
+               --><li>Others</li>
+           </ul>
+       </li><!--
+       --><li>Clothes
+            <ul>
+               <li>Bas</li><!--
+               --><li>Beta</li>
+           </ul>
+       </li><!--
+       --><li>Hand Bags
+            <ul>
+               <li>Ka</li>
+           </ul>
+       </li><!--
+       --><li>Watches
+            <ul>
+               <li>Baap</li>
+           </ul>
+       </li><!--
+       --><li>Jwellery
+            <ul>
+               <li>Murmu</li>
+               
+           </ul>
+       </li>       
     </ul>
     </div>
     <div class = "image-container">
@@ -112,7 +172,31 @@
          <img src="imgs/img2.jpg" class="images" id="image2">
          <img src="imgs/img3.jpg" class="images" id="image3">
     </div>
-    <div class="left-right-buttons" onclick="changeImage(-1)" id="left-button">&#10094;</div>
-    <div class="left-right-buttons" onclick="changeImage(1)" id="right-button">&#10095;</div>
+    <div class="left-right-buttons" onclick="changeImage(-1)" id="left-button">
+        <div>
+            &#10094;
+        </div>
+    </div>
+    <div class="left-right-buttons" onclick="changeImage(1)" id="right-button">
+        <div>
+            &#10095;
+        </div>
+    </div>
+    <div id="login" class="login-signup">
+        <h4 style="text-align: center;">Login</h4>
+          <form>
+              <table>
+                  <tr>
+                    <td>Username</td>
+                    <td><input type="text" name="username"></td>
+                  </tr>
+                  <tr>
+                    <td>Password</td>
+                    <td><input type="password" name="password"></td>
+                  </tr>
+              </table>
+          </form>
+    </div>
+    <div id="coverup"></div>
 </body>
 </html>

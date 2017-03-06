@@ -86,17 +86,14 @@ body,head
 	margin-left: 10px; 
 	display: inline-block;
 }
-#logos
+#logos,#login-icon,#signup-icon
 {
 	float: right;
 	margin-right: 10px;
 	display: inline-block;
 }
-#login-icon
+#login-icon,#signup-icon
 {
-	float: right;
-	margin-right: 10px;
-	display: inline-block;
 	cursor: pointer;
 }
 #image1
@@ -133,7 +130,7 @@ body,head
 .left-right-buttons
 {
 	position: absolute;
-	z-index: 50;
+	z-index: 5;
 	background-color: #95a5a6;		
 	padding: 50px 50px;
 	/*width: 50px 50px;*/
@@ -177,8 +174,8 @@ body,head
 	/*display: block;*/
 	display: none;
 	position: absolute;
-	z-index: 2;
-	opacity: 0.8;
+	z-index: 7;
+	opacity: 0.9;
 	background-color: #95a5a6;
 }
 .login-signup
@@ -191,7 +188,7 @@ body,head
 	left: 40%;
 	/*display: block;*/
 	display: none;
-	z-index: 4;
+	z-index: 10;
 	background-color: white;
 	border-radius: 10px;
 	padding:20px 20px;
@@ -202,4 +199,57 @@ body,head
 	font-size: 1.4em;
 	margin: 0;
 	padding:0 0 10px 0;
+}
+#submit-button
+{
+	margin: auto;
+	margin-top: 10px; 
+	width: 56.47px;
+	/*padding: 10px;*/
+	/*background-color: green;*/
+}
+.login-message
+{
+	display: none;
+	position: fixed;
+	padding: 10px 20px;
+	z-index: 10;
+	border-style: solid;
+	border-width: 2px;
+	top: 480px;
+	font-family: sans-serif;
+	border-radius: 0;
+	color: black;
+}
+#success
+{
+	background-color: #2ecc71;
+	border-color: #27ae60;
+}
+/*#unsuccess
+{
+	background-color: #e74c3c;
+	border-color: #c0392b;
+}*/
+#closeButton
+{
+	top: 35%;
+	left: 40%;
+	display: none;
+	position: absolute;
+	padding: 10px;
+	z-index: 12;
+	background-color: #34495e;
+}
+#errorMessage
+{
+	margin-top:10px;
+	color: red;
+	visibility: hidden;
+}
+#errorMessage2
+{
+	margin-top:10px;
+	color: red;
+	visibility: hidden;
 }
